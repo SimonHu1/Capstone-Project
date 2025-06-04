@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   return (
-    <meta name="App">
+    <div name="App">
       <Header>
       </Header>
       <Nav>
@@ -12,7 +12,7 @@ function App() {
       </Main>
       <Footer>
       </Footer>
-    </meta>
+    </div>
   );
 }
 
