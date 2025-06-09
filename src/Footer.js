@@ -1,14 +1,14 @@
 import React from 'react';
-import logo from '../assets/logo.png';
+import logo from './Images/Logo.svg';
 
 export default function Footer() {
     return (
-        <footer>
+        <footer className="footer">
             <div>
                 <img src={logo} alt="Little Lemon logo" />
             </div>
             <div>
-                <h4>Doormat Navigation</h4>
+                <h4>Navigation</h4>
                 <ul>
                     <li>Home</li>
                     <li>About</li>

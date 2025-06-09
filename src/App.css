@@ -1,38 +1,247 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+/* === NAVIGATION === */
+nav {
+  background-color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #ccc;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* === HERO SECTION === */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 5%;
+  background-color: #495e57;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero img {
+  width: 400px;
+  height: auto;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.hero button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #f4ce14;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* === SPECIALS SECTION === */
+.specials {
+  padding: 4rem 5%;
+  background-color: #fff;
+}
+
+.specials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.specials-header h2 {
+  font-size: 2rem;
+}
+
+.specials-header button {
+  background-color: #f4ce14;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.special-card {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.special-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.special-card h3 {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+}
+
+.special-card p {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* === TESTIMONIALS SECTION === */
+.testimonials {
+  background-color: #edefee;
+  padding: 4rem 5%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.testimonial-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* === ABOUT SECTION === */
+.about {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 4rem 5%;
+  background-color: #edefee;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about img {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #333;
   color: white;
+  padding: 2rem 5%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: left;
 }
 
-.App-link {
-  color: #61dafb;
+footer div {
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+footer h4 {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  to {
-    transform: rotate(360deg);
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero img {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .specials-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .testimonials-grid,
+  .specials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about img {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer div {
+    width: 100%;
+    margin-bottom: 2rem;
   }
 }
