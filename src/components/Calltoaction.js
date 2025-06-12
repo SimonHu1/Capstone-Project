@@ -1,3 +1,4 @@
+import chefImage from '../Images/restauranfood.jpg'
 
 export default function Calltoaction() {
     return (
@@ -8,7 +9,7 @@ export default function Calltoaction() {
             <p>We serve traditional Mediterranean dishes with a modern twist.</p>
             <button>Reserve a Table</button>
         </div>
-        <img src="/Images/chef.jpg" alt="Chef preparing food" />
+        <img src={chefImage} alt="Chef preparing food" />
     </section>
     );
 }
