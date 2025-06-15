@@ -1,34 +1,62 @@
-import React, { useReducer } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Homepage from '../pages/Homepage';
-import Bookingpage from '../pages/Bookingpage';
+import React, { useReducer, useEffect } from "react";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import Bookingpage from "../pages/Bookingpage";
+import Completedform from "././Completedform";
+import Header from "./Header";
 
-const initializeTimes = (date) => {
-  return ['17:00','19:00']
-};
 
-// Reducer to update available times
-const updateTimes = (state, date) => {
-  return initializeTimes();
-};
+const Main = () => {
+    const seededRandom = function (seed) {
+        var m = 2**35 - 31;
+        var a = 185852;
+        var s = seed % m;
+        return function () {
+            return (s = s * a % m) / m;
+        };
+    }
 
-export default function Main() {
-  const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
+    const fetchAPI = function(date) {
+        let result = [];
+        let random = seededRandom(date.getDate());
 
-  return (
-    <main>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route
-          path="/booking"
-          element={
-            <Bookingpage
-              availableTimes={availableTimes}
-              dispatch={dispatch}
-            />
-          }
-        />
-      </Routes>
-    </main>
-  );
+        for(let i = 17; i <= 23; i++) {
+            if(random() < 0.5) {
+                result.push(i + ':00');
+            }
+            if(random() < 0.5) {
+                result.push(i + ':30');
+            }
+        }
+        return result;
+    };
+    const submitAPI = function(formData) {
+        return true;
+    };
+
+    const initialState = {availableTimes:  fetchAPI(new Date())}
+    const [state, dispatch] = useReducer(updateTimes, initialState);
+
+    function updateTimes(state, date) {
+        return {availableTimes: fetchAPI(new Date(date))}
+    }
+    const navigate = useNavigate();
+    function submitForm (formData) {
+        if (submitAPI(formData)) {
+            navigate("/confirmed")
+        }
+    }
+
+    return(
+        <main className="main">
+            <Routes>
+                <Route path="/" element={<Header />} />
+                <Route path="/booking" element={<Bookingpage availableTimes={state} dispatch={dispatch} submitForm={submitForm}/>} />
+                <Route path="/confirmed" element={<Completedform/> } />
+            </Routes>
+        </main>
+
+
+    )
 }
+
+export default Main;

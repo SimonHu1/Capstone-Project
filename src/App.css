@@ -11,6 +11,96 @@ body {
   color: #333;
 }
 
+.header {
+  background-color: #495e57;
+  padding: 50px 0;
+}
+
+.header section {
+color: #EDEFEE;
+padding: 10px 13%;
+position: relative;
+}
+
+
+h2 {
+  color: #F4CE14;
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+.banner p {
+  font-size: 18px;
+  max-width: 520px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+button {
+  background-color: #F4CE14;
+  color: black;
+  padding: 14px 18px;
+  border: none;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.banner-img{
+  position: absolute;
+  right: 13%;
+  top: 15%;
+  width: 400px;
+}
+
+.banner-img img {
+  width: 75%;
+  height: 370px;
+  border-radius: 20px;
+}
+
+
+form, .comfirm{
+  padding: 10px 13%;
+}
+
+.formField{
+  padding: 50px 20px;
+}
+
+input, label{
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+#book-date, #book-time, #book-guests, #book-occasion{
+  background: #bdbdbd43;
+  padding: 8px 24px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+}
+
+.btnReceive input{
+  padding: 12px 16px;
+  margin-top: 20px;
+  background: #495e57;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+
+}
+
+.comfirm span{
+  color: blue;
+}
+
+
 /* === NAVIGATION === */
 nav {
   z-index: 10001;
@@ -82,63 +172,57 @@ nav {
 }
 
 /* === SPECIALS SECTION === */
-.specials {
-  padding: 4rem 5%;
-  background-color: #fff;
+.special-container{
+  margin: 110px auto;
+  padding: 10px 13%;
 }
 
-.specials-header {
+.special-container h2{
+  color: #000;
+}
+
+.special-header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
   flex-wrap: wrap;
 }
-
-.specials-header h2 {
-  font-size: 2rem;
-  font-family: "Karla", sans-serif;
-}
-
-.specials-header button {
-  background-color: #f4ce14;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.specials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.special-card {
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.special-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.special-card h3 {
-  margin-top: 0.5rem;
+.cards{
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
-  font-size: 1.1rem;
-  font-family: "Sofia", sans-serif;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem 1rem;
 }
 
-.special-card p {
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+.special-items{
+  width: 350px;
+  background: #7ddaae;
+  border-radius: 8px;
+}
+
+.special-container img{
+  width: 100%;
+  height: 233px;
+  border-radius: 8px;
+}
+
+.special-content{
+  padding: 5px 15px;
+}
+
+
+.special-content .heading{
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderbtn{
+  padding: 5px 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 /* === TESTIMONIALS SECTION === */
@@ -192,9 +276,8 @@ nav {
 footer section{
   padding: 10px 13%;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  text-align: left;
+  justify-content: space-between;
+  align-items: start;
 }
 
 .company-info img{
