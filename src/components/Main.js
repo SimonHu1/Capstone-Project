@@ -1,10 +1,10 @@
 import React, { useReducer } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Homepage from '../pages/Homepage';
-import Bookingpage from '../pages/Bookingpage';
+import Homepage from './pages/Homepage';
+import Bookingpage from './pages/Bookingpage';
 
-const initializeTimes = () => {
-  return ['17:00', '18:00', '19:00', '20:00', '21:00'];
+const initializeTimes = (date) => {
+  return ['17:00','19:00']
 };
 
 // Reducer to update available times

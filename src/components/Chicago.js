@@ -1,3 +1,4 @@
+import chefImage2 from '../Images/restaurant.jpg'
 
 export default function Chicago() {
     return (
@@ -7,7 +8,7 @@ export default function Chicago() {
                 <h3>Chicago</h3>
                 <p>Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes with a modern twist.</p>
             </div>
-            <img src="/Images/restaurant.jpg" alt="Restaurant in Chicago" />
+            <img src={chefImage2} alt="Restaurant in Chicago" />
         </section>
     );
 }
