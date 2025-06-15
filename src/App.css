@@ -13,24 +13,37 @@ body {
 
 /* === NAVIGATION === */
 nav {
+  z-index: 10001;
   background-color: white;
-  padding: 1rem 2rem;
+  padding: 1rem 13%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid #ccc;
+  position: relative;
 }
 
-nav ul {
+.nav-links {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 
-nav a {
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links li a {
   text-decoration: none;
-  color: #333;
+  color: #000;
   font-weight: bold;
 }
+
+.nav-links li a:hover {
+  text-decoration: underline solid #495E57;
+}
+
 
 /* === HERO SECTION === */
 .hero {
@@ -172,22 +185,33 @@ nav a {
 }
 
 /* === FOOTER === */
-footer {
-  background-color: #333;
-  color: white;
-  padding: 2rem 5%;
+footer section{
+  padding: 10px 13%;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  text-align: left;
+  justify-content: space-between;
+  align-items: start;
 }
 
-footer div {
-  margin-bottom: 1rem;
+.company-info img{
+  margin-top: 12px;
+  cursor: pointer;
+  width: 200px;
 }
 
-footer h4 {
-  margin-bottom: 0.5rem;
+.company-info p{
+  width: 320px;
+}
+
+footer h3{
+  font-size: 18px;
+}
+
+footer ul{
+  padding: 0;
+}
+
+footer ul li{
+  padding: 8px 0;
 }
 
 @media (max-width: 768px) {

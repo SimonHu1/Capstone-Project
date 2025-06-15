@@ -1,5 +1,5 @@
 import React from 'react';
-import Bookingform from '../Bookingform';
+import Bookingform from '../components/Bookingform';
 
 export default function Bookingpage({ availableTimes, dispatch }) {
   return (
