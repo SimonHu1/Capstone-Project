@@ -1,21 +1,24 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Bookingform = (props) => {
-const [occasion, setOccasion] = useState("");
-const [guests, setGuests] = useState("");
-const [date, setDate] = useState("");
-const [time, setTime] = useState("");
+  const [occasion, setOccasion] = useState("");
+  const [guests, setGuests] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  props.submitForm({ date, time, guests, occasion });
-};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.submitForm({ date, time, guests, occasion });
+  };
 
-const handleChange = (date) => {
-  setDate(date);
-  props.dispatch({ type: "UPDATE", date: new Date(date) });
-};
+  const handleChange = (date) => {
+    setDate(date);
+    props.dispatch({ type: "UPDATE", date: new Date(date) });
+  };
+
+  const availableTimes = Array.isArray(props.availableTimes)
+    ? props.availableTimes
+    : props.availableTimes?.availableTimes || [];
 
   return (
     <header>
@@ -23,7 +26,7 @@ const handleChange = (date) => {
         <form onSubmit={handleSubmit}>
           <fieldset className="formField">
             <div>
-              <label htmlFor="book-date">Choose Date:</label>
+              <label htmlFor="book-date">Date:</label>
               <input
                 id="book-date"
                 value={date}
@@ -32,8 +35,9 @@ const handleChange = (date) => {
                 required
               />
             </div>
+
             <div>
-              <label htmlFor="book-time">Choose Time:</label>
+              <label htmlFor="book-time">Time:</label>
               <select
                 id="book-time"
                 value={time}
@@ -41,13 +45,14 @@ const handleChange = (date) => {
                 required
               >
                 <option value="">Select a Time</option>
-                {props.availableTimes.availableTimes.map((availableTime) => (
+                {availableTimes.map((availableTime) => (
                   <option key={availableTime} value={availableTime}>
                     {availableTime}
                   </option>
                 ))}
               </select>
             </div>
+
             <div>
               <label htmlFor="book-guests">Number of Guests:</label>
               <input
@@ -61,6 +66,7 @@ const handleChange = (date) => {
                 required
               />
             </div>
+
             <div>
               <label htmlFor="book-occasion">Occasion:</label>
               <select
@@ -74,6 +80,7 @@ const handleChange = (date) => {
                 <option value="Anniversary">Anniversary</option>
               </select>
             </div>
+
             <div className="btnReceive">
               <input
                 aria-label="On Click"
