@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Homepage from './pages/Homepage';
-import Bookingpage from './pages/Bookingpage';
+import Homepage from '../pages/Homepage';
+import Bookingpage from '../pages/Bookingpage';
 
 const initializeTimes = (date) => {
   return ['17:00','19:00']
